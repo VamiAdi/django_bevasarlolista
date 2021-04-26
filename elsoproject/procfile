@@ -1,1 +1,1 @@
-web: gunicorn elsoproject.wsgi
+web: gunicorn elsoproject.wsgi --log-file -
