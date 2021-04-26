@@ -27,7 +27,7 @@ SECRET_KEY = 'dd8$l*uhdr#k(sfpqw_eve_%-8-vkyy1lk^d8btukpc9)l^k(n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
+ALLOWED_HOSTS = ['127.0.0.1','heroku-bevasarlolista.herokuapp.com']
 
 
 # Application definition
