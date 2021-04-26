@@ -1,0 +1,1 @@
+web: gunicorn elsoproject.wsgi --log-file -

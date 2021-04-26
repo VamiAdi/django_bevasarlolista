@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/lista.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <article>
+            <form name="hozzaadas" method="POST">
+                {% csrf_token %} 
+                <div class="grid-container">
+                    <label for="nev" class="grid-label">Árucikk neve:</label>
+                    <input type="text" name="Árucikk_neve" id="nev"><br>
+                    <label for="mennyiség"class="menny">Mennyiség:</label>
+                    <input type="number" name="dbszam" id="mennyiség">
+                    <select name="mértékegység" id="mértékegység">
+                        <option value="l">liter</option>
+                        <option value="kg">kg</option>
+                        <option value="dkg">dkg</option>
+                        <option value="g">g</option>
+                        <option value="db">db</option>
+                    </select><br>
+                    <button type="submit" name="formtipus" value="ujaru" class="kuld">Küldés</button>
+                </div>
+            </form>
+        </article>
+        <article>
+            <form name="torles" method="POST">
+                {% csrf_token %} 
+                <div class="megegy-grid">
+                    <h1>Mit köll venni:</h1>
+                    {% for cikk in aru %}
+                        <input type="checkbox" id="{{cikk}}" name="{{cikk}}">
+                        <label for="{{cikk}}">{{cikk}}</label><br>
+                    {% endfor %}
+                    <button type="submit" name="formtipus" value="aruki" class="torol">Törlés</button>
+                </div>
+            </form>
+        </article>
+     </main>
+</body>
+</html>
